@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2022 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: BSD-3-Clause
 ---
 name: 'CodeQL Verification'
 
@@ -16,6 +16,9 @@ permissions:
   security-events: write
 
 jobs:
+  dump:
+    name: Dump context
+    uses: crazy-max/ghaction-dump-context@158bbf4d6158a44a7e13f76295dc55a69e481a6e # v2.0.0
   codeql:
     uses: goschtalt/.github/.github/workflows/codeql.yml@9aa934021811b3aef04db4eef572dfc0965caad7 # v1.0.6
     secrets: inherit
