@@ -1,0 +1,40 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: approx
+Upstream-Contact: Weston Schmidt <weston_scmidt@alumni.purdue.edu>
+Source: https://github.com/goschtalt/approx
+
+Files: CODE_OF_CONDUCT.md
+Copyright: SPDX-FileCopyrightText: 2014-2021 Coraline Ada Ehmke and contributors
+License: CC-BY-4.0
+
+Files: .goreleaser.yml
+Copyright: SPDX-FileCopyrightText: 2022 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+License: BSD-3-Clause
+
+Files: .golangci.yml
+Copyright: SPDX-FileCopyrightText: 2022 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+License: BSD-3-Clause
+
+Files: .github/*
+Copyright: SPDX-FileCopyrightText: 2022 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+License: BSD-3-Clause
+
+Files: go.mod
+Copyright: SPDX-FileCopyrightText: 2022 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+License: BSD-3-Clause
+
+Files: go.sum
+Copyright: SPDX-FileCopyrightText: 2022 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+License: BSD-3-Clause
+
+Files: .gitignore
+Copyright: SPDX-FileCopyrightText: 2022 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+License: BSD-3-Clause
+
+Files: MAINTAINERS.md
+Copyright: SPDX-FileCopyrightText: 2022 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+License: BSD-3-Clause
+
+Files: README.md
+Copyright: SPDX-FileCopyrightText: 2022 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+License: BSD-3-Clause

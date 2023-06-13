@@ -1,0 +1,18 @@
+# SPDX-FileCopyrightText: 2022 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+# SPDX-License-Identifier: Apache-2.0
+---
+name: 'Dependabot auto approvals'
+
+on:
+  pull_request_target:
+  schedule:
+    - cron: '28 22 * * 6'
+
+permissions:
+  pull-requests: write
+  contents: write
+
+jobs:
+  package:
+    uses: goschtalt/.github/.github/workflows/approve-dependabot.yml@9aa934021811b3aef04db4eef572dfc0965caad7 # v1.0.6
+    secrets: inherit
