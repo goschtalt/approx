@@ -16,9 +16,6 @@ permissions:
   security-events: write
 
 jobs:
-  dump:
-    name: Dump context
-    uses: crazy-max/ghaction-dump-context@158bbf4d6158a44a7e13f76295dc55a69e481a6e # v2.0.0
   codeql:
     uses: goschtalt/.github/.github/workflows/codeql.yml@0a0ddf20f922b09ee52ab765cd0ae2150aabc2c7 # v1.0.7
     secrets: inherit
