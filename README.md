@@ -6,4 +6,34 @@
 [![GitHub Release](https://img.shields.io/github/release/goschtalt/approx.svg)](https://github.com/goschtalt/approx/releases)
 [![GoDoc](https://pkg.go.dev/badge/github.com/goschtalt/approx)](https://pkg.go.dev/github.com/goschtalt/approx)
 
-Package approx adds support for durations of days, weeks and years.
+Package approx adds support for durations of days, weeks and years.  The code
+used is from the go standard library.  Only very minor adjustments were made
+to enable parsing to support extra units of time.
+
+# Usage
+
+This really simple library allows you to normally use the `time.Duration` object
+from the go standard library, but suppliments two functions for handling
+approximate time durations.
+
+```golang
+package main
+
+import (
+	"fmt"
+
+	"github.com/goschtalt/approx"
+)
+
+func main() {
+	d, err := approx.ParseDuration("1w4d")
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(approx.String(d))
+	fmt.Println(d)
+}
+```
+
+[Go Playground](https://go.dev/play/p/zX2FeTrC8Qb)
