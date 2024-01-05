@@ -5,8 +5,6 @@ name: 'Dependabot auto approvals'
 
 on:
   pull_request_target:
-  schedule:
-    - cron: '28 22 * * 6'
 
 permissions:
   pull-requests: write
