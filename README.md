@@ -6,7 +6,7 @@
 [![GitHub Release](https://img.shields.io/github/release/goschtalt/approx.svg)](https://github.com/goschtalt/approx/releases)
 [![GoDoc](https://pkg.go.dev/badge/github.com/goschtalt/approx)](https://pkg.go.dev/github.com/goschtalt/approx)
 
-Package approx adds support for durations of days, weeks and years.  The code
+Package approx adds support for durations of days, weeks, months and years.  The code
 used is from the go standard library.  Only very minor adjustments were made
 to enable parsing to support extra units of time.
 
@@ -22,7 +22,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/goschtalt/approx"
+	"github.com/gerifield/approx"
 )
 
 func main() {

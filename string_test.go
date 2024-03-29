@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/goschtalt/approx"
+	"github.com/gerifield/approx"
 )
 
 func TestString(t *testing.T) {
@@ -34,6 +34,10 @@ func TestString(t *testing.T) {
 			d:      4*approx.Year + 3*approx.Week + 2*approx.Day + 1*time.Hour,
 			expect: "4y3w2d1h0m0s",
 			format: "ywd",
+		}, {
+			d:      1*approx.Month + 1*approx.Week,
+			expect: "1M1w0d0h0m0s",
+			format: "yMwd",
 		}, {
 			d:      3 * approx.Week,
 			expect: "3w0d0h0m0s",

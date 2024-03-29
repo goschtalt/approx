@@ -13,7 +13,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/goschtalt/approx"
+	"github.com/gerifield/approx"
 )
 
 func TestParseDuration_Mine(t *testing.T) {
@@ -29,6 +29,9 @@ func TestParseDuration_Mine(t *testing.T) {
 		}, {
 			in:     "1y0w0d0h0m0s",
 			expect: approx.Year,
+		}, {
+			in:     "0y1M0w0d0h0m0s",
+			expect: approx.Month,
 		}, {
 			in:     "1y0w0d0h0m0s",
 			expect: 52*approx.Week + approx.Day,
@@ -50,6 +53,9 @@ func TestParseDuration_Mine(t *testing.T) {
 		}, {
 			in:     "1h0m0s",
 			expect: 60 * time.Minute,
+		}, {
+			in:     "2M5m",
+			expect: 2*approx.Month + 5*time.Minute,
 		},
 	}
 

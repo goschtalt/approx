@@ -6,7 +6,7 @@ package approx_test
 import (
 	"fmt"
 
-	"github.com/goschtalt/approx"
+	"github.com/gerifield/approx"
 )
 
 func Example_test() {

@@ -13,9 +13,10 @@ import (
 )
 
 var (
-	Day  = time.Hour * 24
-	Week = Day * 7
-	Year = Day * 365
+	Day   = time.Hour * 24
+	Week  = Day * 7
+	Month = Week * 4
+	Year  = Day * 365
 )
 
 var (
@@ -34,6 +35,7 @@ func String(d time.Duration, format ...string) string {
 
 	format = append(format, "d")
 	withYears := strings.Contains(format[0], "y")
+	withMonths := strings.Contains(format[0], "M")
 	withWeeks := strings.Contains(format[0], "w")
 	withDays := strings.Contains(format[0], "d")
 
@@ -53,6 +55,16 @@ func String(d time.Duration, format ...string) string {
 		setSmaller = true
 	}
 
+	if withMonths && ns >= int64(Month) {
+		months := ns / int64(Month)
+		ns -= months * int64(Month)
+		b.WriteString(fmt.Sprintf("%dM", months))
+		setSmaller = true
+	} else {
+		if withMonths && setSmaller {
+			b.WriteString("0M")
+		}
+	}
 	if withWeeks && ns >= int64(Week) {
 		weeks := ns / int64(Week)
 		ns -= weeks * int64(Week)

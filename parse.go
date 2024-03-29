@@ -126,16 +126,17 @@ var unitMap = map[string]uint64{
 	"s":  uint64(time.Second),
 	"m":  uint64(time.Minute),
 	"h":  uint64(time.Hour),
-	"d":  uint64(Day),  // Approximate WTS - Added
-	"w":  uint64(Week), // Approximate WTS - Added
-	"y":  uint64(Year), // Approximate WTS - Added
+	"d":  uint64(Day),   // Approximate WTS - Added
+	"w":  uint64(Week),  // Approximate WTS - Added
+	"M":  uint64(Month), // Approximate WTS - Added
+	"y":  uint64(Year),  // Approximate WTS - Added
 }
 
 // ParseDuration parses a duration string.
 // A duration string is a possibly signed sequence of
 // decimal numbers, each with optional fraction and a unit suffix,
 // such as "300ms", "-1.5h" or "2h45m".
-// Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h", "d", "w", "y".
+// Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h", "d", "M", "w", "y".
 // Units "day", "week" and "year" are all approximate units with the values
 // of "24h" in a day, "7d" in a week, "365d" in a year.
 func ParseDuration(s string) (time.Duration, error) {
