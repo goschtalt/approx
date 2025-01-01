@@ -12,5 +12,5 @@ permissions:
 
 jobs:
   package:
-    uses: goschtalt/.github/.github/workflows/approve-dependabot.yml@1be22ae6f6fe589a8930431bb3105ec6ea2f265e # v1.1.61
+    uses: goschtalt/.github/.github/workflows/approve-dependabot.yml@031ed56938875f5ad4782929a2b80d8250e83c26 # v1.1.62
     secrets: inherit
