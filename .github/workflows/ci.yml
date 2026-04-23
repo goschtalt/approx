@@ -21,5 +21,5 @@ permissions:
 
 jobs:
   ci:
-    uses: goschtalt/.github/.github/workflows/ci.yml@e53b51e2064c67252a0f5f12eab7a6189774ae85 # v1.2.74
+    uses: goschtalt/.github/.github/workflows/ci.yml@b275f4ac4e5a4df525e54f88119c542099f1c2ee # v1.2.75
     secrets: inherit
