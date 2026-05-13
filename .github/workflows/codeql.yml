@@ -17,5 +17,5 @@ permissions:
 
 jobs:
   codeql:
-    uses: goschtalt/.github/.github/workflows/codeql.yml@43ce4befc433dcd9bbb588c2c58717b3a8b3a0d6 # v1.2.78
+    uses: goschtalt/.github/.github/workflows/codeql.yml@c6bbf7493e3325be3d17c4d4a2481e06291b9bb0 # v1.2.79
     secrets: inherit
