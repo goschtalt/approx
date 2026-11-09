@@ -241,7 +241,7 @@ func TestParseDurationRoundTrip(t *testing.T) {
 		t.Errorf("round-trip failed: %d => %q => %d, %v", min0, min0.String(), min1, err)
 	}
 
-	for i := 0; i < 100; i++ {
+	for range 100 {
 		// Resolutions finer than milliseconds will result in
 		// imprecise round-trips.
 		d0 := time.Duration(rand.Int31()) * time.Millisecond

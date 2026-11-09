@@ -47,7 +47,7 @@ func quote(s string) string {
 			} else {
 				width = len(string(c))
 			}
-			for j := 0; j < width; j++ {
+			for j := range width {
 				buf = append(buf, `\x`...)
 				buf = append(buf, lowerhex[s[i+j]>>4])
 				buf = append(buf, lowerhex[s[i+j]&0xF])
