@@ -203,8 +203,9 @@ var parseDurationErrorTests = []struct {
 	{"\x85\x85", `"\x85\x85"`},
 	{"\xffff", `"\xffff"`},
 	{"hello \xffff world", `"hello \xffff world"`},
-	{"\uFFFD", `"\xef\xbf\xbd"`},                                             // utf8.RuneError
-	{"\uFFFD hello \uFFFD world", `"\xef\xbf\xbd hello \xef\xbf\xbd world"`}, // utf8.RuneError
+	// utf8.RuneError
+	{"\uFFFD", `"\xef\xbf\xbd"`},
+	{"\uFFFD hello \uFFFD world", `"\xef\xbf\xbd hello \xef\xbf\xbd world"`},
 	// overflow
 	{"9223372036854775810ns", `"9223372036854775810ns"`},
 	{"9223372036854775808ns", `"9223372036854775808ns"`},

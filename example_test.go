@@ -10,7 +10,6 @@ import (
 )
 
 func Example_test() {
-
 	d, err := approx.ParseDuration("1w4d")
 	if err != nil {
 		panic(err)
