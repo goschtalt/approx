@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2023 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+// SPDX-FileCopyrightText: 2023 Weston Schmidt <weston_schmidt@d73.dev>
 // SPDX-License-Identifier: BSD-3-Clause
 
 package approx_test
@@ -10,7 +10,6 @@ import (
 )
 
 func Example_test() {
-
 	d, err := approx.ParseDuration("1w4d")
 	if err != nil {
 		panic(err)

@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2023 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+// SPDX-FileCopyrightText: 2023 Weston Schmidt <weston_schmidt@d73.dev>
 // SPDX-License-Identifier: BSD-3-Clause
 
 // Package approx provides a set of approximate duration units that extend the
@@ -49,29 +49,25 @@ func String(d time.Duration, format ...string) string {
 	if withYears && ns >= int64(Year) {
 		years := ns / int64(Year)
 		ns -= years * int64(Year)
-		b.WriteString(fmt.Sprintf("%dy", years))
+		fmt.Fprintf(&b, "%dy", years)
 		setSmaller = true
 	}
 
 	if withWeeks && ns >= int64(Week) {
 		weeks := ns / int64(Week)
 		ns -= weeks * int64(Week)
-		b.WriteString(fmt.Sprintf("%dw", weeks))
+		fmt.Fprintf(&b, "%dw", weeks)
 		setSmaller = true
-	} else {
-		if withWeeks && setSmaller {
-			b.WriteString("0w")
-		}
+	} else if withWeeks && setSmaller {
+		b.WriteString("0w")
 	}
 	if withDays && ns >= int64(Day) {
 		days := ns / int64(Day)
 		ns -= days * int64(Day)
-		b.WriteString(fmt.Sprintf("%dd", days))
+		fmt.Fprintf(&b, "%dd", days)
 		setSmaller = true
-	} else {
-		if withDays && setSmaller {
-			b.WriteString("0d")
-		}
+	} else if withDays && setSmaller {
+		b.WriteString("0d")
 	}
 	if setSmaller {
 		if ns < int64(time.Hour) {

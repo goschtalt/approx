@@ -1,5 +1,5 @@
 // SPDX-FileCopyrightText: 2010 The Go Authors.
-// SPDX-FileCopyrightText: 2023 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+// SPDX-FileCopyrightText: 2023 Weston Schmidt <weston_schmidt@d73.dev>
 // SPDX-License-Identifier: BSD-3-Clause
 //
 // This code comes from:
@@ -47,7 +47,7 @@ func quote(s string) string {
 			} else {
 				width = len(string(c))
 			}
-			for j := 0; j < width; j++ {
+			for j := range width {
 				buf = append(buf, `\x`...)
 				buf = append(buf, lowerhex[s[i+j]>>4])
 				buf = append(buf, lowerhex[s[i+j]&0xF])
@@ -168,7 +168,7 @@ func ParseDuration(s string) (time.Duration, error) {
 		var err error
 
 		// The next character must be [0-9.]
-		if !(s[0] == '.' || '0' <= s[0] && s[0] <= '9') {
+		if s[0] != '.' && (s[0] < '0' || s[0] > '9') {
 			return 0, errors.New("time: invalid duration " + quote(orig))
 		}
 		// Consume [0-9]*

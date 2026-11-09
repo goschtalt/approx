@@ -1,5 +1,5 @@
 // SPDX-FileCopyrightText: 2009 The Go Authors.
-// SPDX-FileCopyrightText: 2023 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+// SPDX-FileCopyrightText: 2023 Weston Schmidt <weston_schmidt@d73.dev>
 // SPDX-License-Identifier: BSD-3-Clause
 
 package approx_test
@@ -203,8 +203,9 @@ var parseDurationErrorTests = []struct {
 	{"\x85\x85", `"\x85\x85"`},
 	{"\xffff", `"\xffff"`},
 	{"hello \xffff world", `"hello \xffff world"`},
-	{"\uFFFD", `"\xef\xbf\xbd"`},                                             // utf8.RuneError
-	{"\uFFFD hello \uFFFD world", `"\xef\xbf\xbd hello \xef\xbf\xbd world"`}, // utf8.RuneError
+	// utf8.RuneError
+	{"\uFFFD", `"\xef\xbf\xbd"`},
+	{"\uFFFD hello \uFFFD world", `"\xef\xbf\xbd hello \xef\xbf\xbd world"`},
 	// overflow
 	{"9223372036854775810ns", `"9223372036854775810ns"`},
 	{"9223372036854775808ns", `"9223372036854775808ns"`},
@@ -240,7 +241,7 @@ func TestParseDurationRoundTrip(t *testing.T) {
 		t.Errorf("round-trip failed: %d => %q => %d, %v", min0, min0.String(), min1, err)
 	}
 
-	for i := 0; i < 100; i++ {
+	for range 100 {
 		// Resolutions finer than milliseconds will result in
 		// imprecise round-trips.
 		d0 := time.Duration(rand.Int31()) * time.Millisecond
